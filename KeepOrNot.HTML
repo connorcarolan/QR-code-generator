@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+    <link rel="stylesheet" href="https://ssl.gstatic.com/docs/script/css/add-ons1.css">
+    <script>
+      function sendDesc(){
+        google.script.run.KeeporNot(document.forms[0]);
+        google.script.host.close();
+      }
+      
+      function grey(checksaveornot){
+        if(checksaveornot == 'Save'){
+          var saveBtn = document.getElementById("Save");
+          saveBtn.checked = true;
+        } else if(checksaveornot == 'Not'){
+          var notBtn = document.getElementById("Not");
+          notBtn.checked = true;
+        }
+      }
+    </script>
+    <style>
+    p{
+    font-size: 12px;
+    }
+    div{
+    font-size: 18px;
+    }
+    </style>
+  </head>
+  <body onload="google.script.run.withSuccessHandler(grey).checksaveornot();">
+    <form onsubmit="sendDesc()">
+      <div><u><b> Storage Settings </b></u></div>
+      Keep a copy of each generated QR Code?
+      <br>
+      <input type="radio" name="radio" value="Keep" id="Save" />
+      <b>Yes</b>, keep QR Codes
+      <br>
+      <input type="radio" name="radio" value="Not" id="Not"/>
+      <b>No</b>, don't Keep QR Codes
+      <p> Stored QR codes can be found in the 'QR Codes' folder, located in the 'My Drive' section of your drive. </p>
+      <div><u><b>Sharing Settings </b></u></div>
+      Change sharing settings for the selected folder/files?
+      <br>
+      <input type="radio" name="radioSharing" value="AnyoneLink" id="Save" />
+      <b>On</b> - Anyone with the link - Can view
+      <br>
+      <input type="radio" name="radioSharing" value="Anyone" id="Not"/>
+      <b>On</b> - Public on the web - Can view
+      <br>
+      <input type="radio" name="radioSharing" value="noChange";/>
+      <b>No Change</b>
+      <br><br>
+      <input type="submit" value="Submit"/>
+      </form>
+  </body>
+</html>
+
+
