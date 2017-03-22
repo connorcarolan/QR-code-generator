@@ -10,18 +10,17 @@ I created this add-on for educators. Technology are being used more often in cla
 
 ### JavaScript:
 #### Code.gs
-
-
+Coming Soon...
 #### QR.gs
-
+Coming Soon...
 ### HTML:
 #### Each Picker____.HTML:
-
-
+Coming Soon...
 ### Alert.hTML:
-
-
+Coming Soon...
 ### Description.HTML:
-
-
+Coming Soon...
 ### Both KeepOrNot____.HTML:
+Coming Soon...
+
+![Promotion tile](https://github.com/connorcarolan/QR-code-generator/blob/master/QRCodeGen%20Promo%20Small.png)
