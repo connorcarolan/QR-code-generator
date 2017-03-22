@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+    <link rel="stylesheet" href="https://ssl.gstatic.com/docs/script/css/add-ons1.css">
+    <script>
+      function sendDesc(){
+        google.script.run.replaceDesc(document.forms[0]);
+        google.script.host.close();
+      }
+      
+      function grey(checksaveornot){
+        if(checksaveornot == 'Save'){
+          var saveBtn = document.getElementById("Save");
+          saveBtn.checked = true;
+        } else if(checksaveornot == 'Not'){
+          var notBtn = document.getElementById("Not");
+          notBtn.checked = true;
+        }
+      }
+    </script>
+    <style>
+    p{
+    font-size: 12px;
+    color: grey;
+    }
+    div{
+    font-size: 15px;
+    }
+    </style>
+  </head>
+  <body onload="google.script.run.withSuccessHandler(grey).checksaveornot();">
+    <form onsubmit ="sendDesc();">
+      <h1> Enter a description:</h1>
+      <p> This will be added for each QR Code </p>
+      <input type="text" name="Desc" style="width:500px"/>
+      <br>
+      <div>Storage</div>
+      <b>Keep a copy of each generated QR Code?</b>
+      <br>
+      <input type="radio" name="radio" value="Keep" id="Save" />
+      <b>Yes</b>, keep QR Codes
+      <br>
+      <input type="radio" name="radio" value="Not" id="Not"/>
+      <b>No</b>, don't Keep QR Codes
+      <p> Stored QR codes can be found in the 'QR Codes' folder.</p>
+      <div>Sharing</div>
+      <b>Change sharing settings for the selected folder/files?</b>
+      <br>
+      <input type="radio" name="radioSharing" value="AnyoneLink" id="Save" />
+      <b>On</b> - Anyone with the link - Can view
+      <br>
+      <input type="radio" name="radioSharing" value="Anyone" id="Not"/>
+      <b>On</b> - Public on the web - Can view
+      <br>
+      <input type="radio" name="radioSharing" value="noChange" ;/>
+      <b>No Change</b>
+      <br><br>
+      <input type="submit" value="Submit"/>
+      </form>
+  </body>
+</html>
